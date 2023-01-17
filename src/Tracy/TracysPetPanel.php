@@ -4,6 +4,9 @@ namespace OriNette\TracysPet\Tracy;
 
 use Throwable;
 use Tracy\Helpers;
+use function array_rand;
+use function base64_encode;
+use function file_get_contents;
 
 final class TracysPetPanel
 {
@@ -30,7 +33,7 @@ final class TracysPetPanel
 	private array $images = [
 		__DIR__ . '/grumpy.png',
 		__DIR__ . '/sadge.png',
-		__DIR__ . '/mouse.png'
+		__DIR__ . '/mouse.png',
 	];
 
 	/**
@@ -49,12 +52,12 @@ final class TracysPetPanel
 				$message = $this->texts[array_rand($this->texts)];
 
 				$bubble = 'data:image/svg+xml;base64,' . base64_encode(
-					file_get_contents(__DIR__ . '/bubble.svg')
-					);
+					file_get_contents(__DIR__ . '/bubble.svg'),
+				);
 
 				$pet = 'data:image/png;base64,' . base64_encode(
-						file_get_contents($this->images[array_rand($this->images)])
-					);
+					file_get_contents($this->images[array_rand($this->images)]),
+				);
 				// phpcs:enable SlevomatCodingStandard.Variables.UnusedVariable
 
 				require __DIR__ . '/TracysPetPanel.phtml';

@@ -4,3 +4,7 @@ includes:
 parameters:
 	level: 8
 	resultCachePath: %currentWorkingDirectory%/var/tools/PHPStan/resultCache.src.php
+
+	ignoreErrors:
+		# Nope
+		- '#^Parameter \#1 \$str of function base64_encode expects string, string\|false given\.$#'
