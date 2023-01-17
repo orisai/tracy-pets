@@ -36,6 +36,17 @@ final class TracyPetsPanel
 		__DIR__ . '/animals/mouse.png',
 	];
 
+	private static bool $renderOnceCheck = false;
+
+	private static bool $isRendered = false;
+
+	public function __construct(bool $renderOnceCheck = false)
+	{
+		if ($renderOnceCheck) {
+			self::$renderOnceCheck = $renderOnceCheck;
+		}
+	}
+
 	/**
 	 * @return array{tab: string, panel: string}|null
 	 */
@@ -43,6 +54,14 @@ final class TracyPetsPanel
 	{
 		if ($e !== null) {
 			return null;
+		}
+
+		if (self::$renderOnceCheck) {
+			if (self::$isRendered) {
+				return null;
+			}
+
+			self::$isRendered = true;
 		}
 
 		return [

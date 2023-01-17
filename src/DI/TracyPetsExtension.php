@@ -26,7 +26,7 @@ final class TracyPetsExtension extends CompilerExtension
 	{
 		parent::loadConfiguration();
 
-		self::setupPanel(Debugger::getBlueScreen());
+		self::setupPanel(Debugger::getBlueScreen(), true);
 	}
 
 	public function beforeCompile(): void
@@ -40,9 +40,9 @@ final class TracyPetsExtension extends CompilerExtension
 		]);
 	}
 
-	public static function setupPanel(BlueScreen $blueScreen): void
+	public static function setupPanel(BlueScreen $blueScreen, bool $renderOnceCheck = false): void
 	{
-		$blueScreen->addPanel(new TracyPetsPanel());
+		$blueScreen->addPanel(new TracyPetsPanel($renderOnceCheck));
 	}
 
 }

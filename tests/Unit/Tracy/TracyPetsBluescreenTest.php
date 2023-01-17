@@ -22,4 +22,19 @@ final class TracyPetsBluescreenTest extends TestCase
 		}
 	}
 
+	/**
+	 * @runInSeparateProcess
+	 */
+	public function testRenderOnce(): void
+	{
+		$panel = new TracyPetsPanel();
+		self::assertIsArray($panel(null));
+
+		$panel = new TracyPetsPanel(true);
+		self::assertIsArray($panel(null));
+
+		$panel = new TracyPetsPanel();
+		self::assertNull($panel(null));
+	}
+
 }
