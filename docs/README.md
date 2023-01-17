@@ -22,6 +22,15 @@ extensions:
 	orisai.tracyPets: OriNette\TracyPets\DI\TracyPetsExtension
 ```
 
+Or if you use just Tracy
+
+```php
+use OriNette\TracyPets\Tracy\TracyPetsPanel;
+use Tracy\Debugger;
+
+Debugger::getBlueScreen()->addPanel(new TracyPetsPanel());
+```
+
 ## Usage
 
 1. Throw an exception
