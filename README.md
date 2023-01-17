@@ -38,3 +38,8 @@
 <p>
 
 ##
+
+> This package is inspired by [grumpy error bundle](https://github.com/kiler129/grumpy-error-bundle)
+> from [Grzegorz Zdanowski](https://github.com/kiler129). Thank you, Grzegorz!
+
+![Tracy screenshot](docs/assets/screenshot.webp)

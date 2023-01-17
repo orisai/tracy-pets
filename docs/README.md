@@ -35,3 +35,5 @@ Debugger::getBlueScreen()->addPanel(new TracyPetsPanel());
 
 1. Throw an exception
 2. Enjoy! 🎉
+
+![Tracy screenshot](assets/screenshot.webp)
