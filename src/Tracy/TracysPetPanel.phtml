@@ -1,7 +1,61 @@
 <?php declare(strict_types = 1)
 
 /** @var string $message */
+/** @var string $bubble */
+/** @var string $pet */
 
 ?>
 
-<?= $message ?>
+<div id="tracy-pet"></div>
+
+<style type="text/css">
+	#tracy-bs .tracy-bs-main {
+		position: relative;
+	}
+
+	#tracy-bs .tracy-bs-main .tracy-section--error {
+		padding-right: 505px !important;
+	}
+
+	#tracy-bs .tracy-bs-main::before {
+		content: "";
+		display: block;
+		position: absolute;
+		z-index: 10000;
+		top: 15px;
+		right: 15px;
+		width: 250px;
+		height: 250px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-image: url(<?= $pet ?>);
+		background-size: contain;
+	}
+
+	#tracy-bs .tracy-bs-main::after {
+		content: "<?= $message ?>";
+		font-size: 18px;
+		padding: 30px 35px 50px 30px;
+		color: #fff;
+		font-weight: 700;
+		position: absolute;
+		z-index: 10001;
+		top: 15px;
+		right: 245px;
+		display: flex;
+		transform: rotate(338deg);
+		width: 180px;
+		height: 130px;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-image: url(<?= $bubble ?>);
+		background-size: contain;
+	}
+
+	#tracy-bs .tracy-section:has(#tracy-pet) {
+		display: none !important;
+	}
+</style>

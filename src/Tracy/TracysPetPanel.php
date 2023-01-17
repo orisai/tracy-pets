@@ -13,7 +13,6 @@ final class TracysPetPanel
 		'Error? Good.',
 		'Go back to work',
 		'How about... no.',
-		'Lorem ipsum bla blah blah Lorem ipsum bla blah blah Lorem ipsum bla blah blah ',
 		'Pretend like it\'s Friday',
 		'You call this code?',
 		'You deserve it',
@@ -27,16 +26,35 @@ final class TracysPetPanel
 		'Why are they keeping you again?',
 	];
 
+	/** @var list<string> */
+	private array $images = [
+		__DIR__ . '/grumpy.png',
+		__DIR__ . '/sadge.png',
+		__DIR__ . '/mouse.png'
+	];
+
 	/**
-	 * @return array{tab: string, panel: string}
+	 * @return array{tab: string, panel: string}|null
 	 */
-	public function __invoke(?Throwable $e): array
+	public function __invoke(?Throwable $e): ?array
 	{
+		if ($e !== null) {
+			return null;
+		}
+
 		return [
-			'tab' => 'Tracy\'s pet',
+			'tab' => 'Test',
 			'panel' => Helpers::capture(function (): void {
 				// phpcs:disable SlevomatCodingStandard.Variables.UnusedVariable
 				$message = $this->texts[array_rand($this->texts)];
+
+				$bubble = 'data:image/svg+xml;base64,' . base64_encode(
+					file_get_contents(__DIR__ . '/bubble.svg')
+					);
+
+				$pet = 'data:image/png;base64,' . base64_encode(
+						file_get_contents($this->images[array_rand($this->images)])
+					);
 				// phpcs:enable SlevomatCodingStandard.Variables.UnusedVariable
 
 				require __DIR__ . '/TracysPetPanel.phtml';
