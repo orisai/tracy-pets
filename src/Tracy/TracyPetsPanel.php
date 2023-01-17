@@ -31,9 +31,9 @@ final class TracyPetsPanel
 
 	/** @var list<string> */
 	private array $images = [
-		__DIR__ . '/grumpy.png',
-		__DIR__ . '/sadge.png',
-		__DIR__ . '/mouse.png',
+		__DIR__ . '/animals/grumpy.png',
+		__DIR__ . '/animals/sadge.png',
+		__DIR__ . '/animals/mouse.png',
 	];
 
 	/**
