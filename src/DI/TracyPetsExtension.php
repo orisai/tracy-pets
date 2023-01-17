@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace OriNette\TracysPet\DI;
+namespace OriNette\TracyPets\DI;
 
 use Nette\DI\CompilerExtension;
 use Nette\PhpGenerator\Literal;
 use Nette\Schema\Expect;
 use Nette\Schema\Schema;
-use OriNette\TracysPet\Tracy\TracysPetPanel;
+use OriNette\TracyPets\Tracy\TracyPetsPanel;
 use stdClass;
 use Tracy\BlueScreen;
 use Tracy\Debugger;
@@ -14,7 +14,7 @@ use Tracy\Debugger;
 /**
  * @property-read stdClass $config
  */
-final class TracysPetExtension extends CompilerExtension
+final class TracyPetsExtension extends CompilerExtension
 {
 
 	public function getConfigSchema(): Schema
@@ -42,7 +42,7 @@ final class TracysPetExtension extends CompilerExtension
 
 	public static function setupPanel(BlueScreen $blueScreen): void
 	{
-		$blueScreen->addPanel(new TracysPetPanel());
+		$blueScreen->addPanel(new TracyPetsPanel());
 	}
 
 }

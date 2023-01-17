@@ -1,11 +1,11 @@
 <h1 align="center">
 	<img src="https://github.com/orisai/.github/blob/main/images/repo_title.png?raw=true" alt="Orisai"/>
 	<br/>
-	Tracy's Pet
+	Tracy Pets
 </h1>
 
 <p align="center">
-    Tracy got an angry pet to remind you of your failures
+    <a href="https://tracy.nette.org">Tracy</a> got an angry pet to remind you of your failures
 </p>
 
 <p align="center">
@@ -17,20 +17,20 @@
 </p>
 
 <p align="center">
-	<a href="https://github.com/orisai/tracys-pet/actions?query=workflow%3Aci">
-		<img src="https://github.com/orisai/tracys-pet/workflows/ci/badge.svg">
+	<a href="https://github.com/orisai/tracy-pets/actions?query=workflow%3Aci">
+		<img src="https://github.com/orisai/tracy-pets/workflows/ci/badge.svg">
 	</a>
-	<a href="https://coveralls.io/r/orisai/tracys-pet">
-		<img src="https://badgen.net/coveralls/c/github/orisai/tracys-pet/v1.x?cache=300">
+	<a href="https://coveralls.io/r/orisai/tracy-pets">
+		<img src="https://badgen.net/coveralls/c/github/orisai/tracy-pets/v1.x?cache=300">
 	</a>
-	<a href="https://dashboard.stryker-mutator.io/reports/github.com/orisai/tracys-pet/v1.x">
-		<img src="https://badge.stryker-mutator.io/github.com/orisai/tracys-pet/v1.x">
+	<a href="https://dashboard.stryker-mutator.io/reports/github.com/orisai/tracy-pets/v1.x">
+		<img src="https://badge.stryker-mutator.io/github.com/orisai/tracy-pets/v1.x">
 	</a>
-	<a href="https://packagist.org/packages/orisai/tracys-pet">
-		<img src="https://badgen.net/packagist/dt/orisai/tracys-pet?cache=3600">
+	<a href="https://packagist.org/packages/orisai/tracy-pets">
+		<img src="https://badgen.net/packagist/dt/orisai/tracy-pets?cache=3600">
 	</a>
-	<a href="https://packagist.org/packages/orisai/tracys-pet">
-		<img src="https://badgen.net/packagist/v/orisai/tracys-pet?cache=3600">
+	<a href="https://packagist.org/packages/orisai/tracy-pets">
+		<img src="https://badgen.net/packagist/v/orisai/tracy-pets?cache=3600">
 	</a>
 	<a href="https://choosealicense.com/licenses/mpl-2.0/">
 		<img src="https://badgen.net/badge/license/MPL-2.0/blue?cache=3600">

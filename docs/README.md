@@ -1,6 +1,6 @@
-# Tracy's Pet
+# Tracy Pets
 
-Tracy got an angry pet to remind you of your failures
+[Tracy](https://tracy.nette.org) got an angry pet to remind you of your failures
 
 ## Content
 
@@ -12,14 +12,14 @@ Tracy got an angry pet to remind you of your failures
 Install with [Composer](https://getcomposer.org)
 
 ```sh
-composer require orisai/tracys-pet
+composer require orisai/tracy-pets
 ```
 
 Register extension
 
 ```neon
 extensions:
-	orisai.tracysPet: OriNette\TracysPet\DI\TracysPetExtension
+	orisai.tracyPets: OriNette\TracyPets\DI\TracyPetsExtension
 ```
 
 ## Usage

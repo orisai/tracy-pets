@@ -1,17 +1,17 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\OriNette\TracysPet\Unit\Tracy;
+namespace Tests\OriNette\TracyPets\Unit\Tracy;
 
 use Exception;
-use OriNette\TracysPet\Tracy\TracysPetPanel;
+use OriNette\TracyPets\Tracy\TracyPetsPanel;
 use PHPUnit\Framework\TestCase;
 
-final class TracysPetBluescreenTest extends TestCase
+final class TracyPetsBluescreenTest extends TestCase
 {
 
 	public function test(): void
 	{
-		$panel = new TracysPetPanel();
+		$panel = new TracyPetsPanel();
 
 		for ($i = 1; $i <= 10; $i++) {
 			$result = $panel(new Exception());

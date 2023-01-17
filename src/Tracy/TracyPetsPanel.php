@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace OriNette\TracysPet\Tracy;
+namespace OriNette\TracyPets\Tracy;
 
 use Throwable;
 use Tracy\Helpers;
@@ -8,7 +8,7 @@ use function array_rand;
 use function base64_encode;
 use function file_get_contents;
 
-final class TracysPetPanel
+final class TracyPetsPanel
 {
 
 	/** @var list<string> */
@@ -60,7 +60,7 @@ final class TracysPetPanel
 				);
 				// phpcs:enable SlevomatCodingStandard.Variables.UnusedVariable
 
-				require __DIR__ . '/TracysPetPanel.phtml';
+				require __DIR__ . '/TracyPets.panel.phtml';
 			}),
 		];
 	}

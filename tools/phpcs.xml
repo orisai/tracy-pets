@@ -15,8 +15,8 @@
 	<rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
 		<properties>
 			<property name="rootNamespaces" type="array">
-				<element key="src" value="OriNette\TracysPet"/>
-				<element key="tests" value="Tests\OriNette\TracysPet"/>
+				<element key="src" value="OriNette\TracyPets"/>
+				<element key="tests" value="Tests\OriNette\TracyPets"/>
 			</property>
 		</properties>
 	</rule>

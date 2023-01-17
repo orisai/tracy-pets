@@ -1,5 +1,5 @@
 {
-	"name": "orisai/tracys-pet",
+	"name": "orisai/tracy-pets",
 	"description": "Tracy got an angry pet to remind you of your failures",
 	"keywords": [
 		"exception",
@@ -10,7 +10,7 @@
 	],
 	"type": "library",
 	"license": "MPL-2.0",
-	"homepage": "https://github.com/orisai/tracys-pet",
+	"homepage": "https://github.com/orisai/tracy-pets",
 	"authors": [
 		{
 			"name": "Marek Bartoš",
@@ -36,12 +36,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"OriNette\\TracysPet\\": "src"
+			"OriNette\\TracyPets\\": "src"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Tests\\OriNette\\TracysPet\\": "tests"
+			"Tests\\OriNette\\TracyPets\\": "tests"
 		}
 	},
 	"minimum-stability": "dev",
