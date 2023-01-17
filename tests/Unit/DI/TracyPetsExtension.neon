@@ -1,0 +1,3 @@
+extensions:
+	orisai.tracyPets: OriNette\TracyPets\DI\TracyPetsExtension
+	tracy: Tracy\Bridges\Nette\TracyExtension
