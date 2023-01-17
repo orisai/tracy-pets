@@ -3,6 +3,7 @@
 namespace OriNette\TracysPet\Tracy;
 
 use Throwable;
+use Tracy\Helpers;
 
 final class TracysPetPanel
 {
@@ -31,11 +32,15 @@ final class TracysPetPanel
 	 */
 	public function __invoke(?Throwable $e): array
 	{
-		$message = $this->texts[array_rand($this->texts)];
-
 		return [
 			'tab' => 'Tracy\'s pet',
-			'panel' => $message,
+			'panel' => Helpers::capture(function (): void {
+				// phpcs:disable SlevomatCodingStandard.Variables.UnusedVariable
+				$message = $this->texts[array_rand($this->texts)];
+				// phpcs:enable SlevomatCodingStandard.Variables.UnusedVariable
+
+				require __DIR__ . '/TracysPetPanel.phtml';
+			}),
 		];
 	}
 
