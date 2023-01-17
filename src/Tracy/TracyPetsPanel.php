@@ -4,6 +4,7 @@ namespace OriNette\TracyPets\Tracy;
 
 use Throwable;
 use Tracy\Helpers;
+use function addcslashes;
 use function array_rand;
 use function base64_encode;
 use function file_get_contents;
@@ -69,6 +70,7 @@ final class TracyPetsPanel
 			'panel' => Helpers::capture(function (): void {
 				// phpcs:disable SlevomatCodingStandard.Variables.UnusedVariable
 				$message = $this->texts[array_rand($this->texts)];
+				$message = addcslashes($message, "\x00..\x1F!\"#$%&'()*+,./:;<=>?@[\\]^`{|}~");
 
 				$bubble = 'data:image/svg+xml;base64,' . base64_encode(
 					file_get_contents(__DIR__ . '/bubble.svg'),
