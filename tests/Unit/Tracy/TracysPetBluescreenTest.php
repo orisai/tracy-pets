@@ -2,16 +2,24 @@
 
 namespace Tests\OriNette\TracysPet\Unit\Tracy;
 
+use Exception;
 use OriNette\TracysPet\Tracy\TracysPetPanel;
 use PHPUnit\Framework\TestCase;
-use function class_exists;
 
 final class TracysPetBluescreenTest extends TestCase
 {
 
 	public function test(): void
 	{
-		self::assertTrue(class_exists(TracysPetPanel::class));
+		$panel = new TracysPetPanel();
+
+		for ($i = 1; $i <= 10; $i++) {
+			$result = $panel(new Exception());
+			self::assertNull($result);
+
+			$result = $panel(null);
+			self::assertIsArray($result);
+		}
 	}
 
 }
