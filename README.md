@@ -17,8 +17,8 @@
 </p>
 
 <p align="center">
-	<a href="https://github.com/orisai/tracy-pets/actions?query=workflow%3Aci">
-		<img src="https://github.com/orisai/tracy-pets/workflows/ci/badge.svg">
+	<a href="https://github.com/orisai/tracy-pets/actions?query=workflow%3ACI">
+		<img src="https://github.com/orisai/tracy-pets/workflows/CI/badge.svg">
 	</a>
 	<a href="https://coveralls.io/r/orisai/tracy-pets">
 		<img src="https://badgen.net/coveralls/c/github/orisai/tracy-pets/v1.x?cache=300">

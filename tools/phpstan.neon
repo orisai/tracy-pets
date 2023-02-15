@@ -1,9 +1,12 @@
 includes:
 	- ../vendor/phpstan/phpstan/conf/bleedingEdge.neon
+	- phpstan.baseline.neon
 
 parameters:
 	phpVersion: 70400
+	level: 8
 	tmpDir: ../var/tools/PHPStan
+	resultCachePath: %currentWorkingDirectory%/var/tools/PHPStan/resultCache.php
 
 	checkBenevolentUnionTypes: true
 	checkMissingCallableSignature: true
@@ -16,3 +19,7 @@ parameters:
 			tooWideThrowType: true
 		checkedExceptionClasses:
 			- Orisai\Exceptions\Check\CheckedException
+
+	ignoreErrors:
+		# Nope
+		- '#^Parameter \#1 \$str of function base64_encode expects string, string\|false given\.$#'

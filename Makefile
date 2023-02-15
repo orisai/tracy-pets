@@ -3,8 +3,8 @@ _: list
 # Config
 
 PHPCS_CONFIG=tools/phpcs.xml
-PHPSTAN_SRC_CONFIG=tools/phpstan.src.neon
-PHPSTAN_TESTS_CONFIG=tools/phpstan.tests.neon
+PHPSTAN_CONFIG=tools/phpstan.neon
+PHPSTAN_BASELINE_CONFIG=tools/phpstan.baseline.neon
 PHPUNIT_CONFIG=tools/phpunit.xml
 INFECTION_CONFIG=tools/infection.json
 
@@ -23,8 +23,10 @@ csf: ## Fix PHP files coding style
 
 phpstan: ## Analyse code with PHPStan
 	mkdir -p var/tools
-	$(PRE_PHP) "vendor/bin/phpstan" analyse src -c $(PHPSTAN_SRC_CONFIG) $(ARGS)
-	$(PRE_PHP) "vendor/bin/phpstan" analyse tests -c $(PHPSTAN_TESTS_CONFIG) $(ARGS)
+	$(PRE_PHP) "vendor/bin/phpstan" analyse src tests -c $(PHPSTAN_CONFIG) $(ARGS)
+
+phpstan-baseline: ## Add PHPStan errors to baseline
+	make phpstan ARGS="-b $(PHPSTAN_BASELINE_CONFIG)"
 
 # Tests
 
@@ -36,7 +38,7 @@ coverage-clover: ## Generate code coverage in XML format
 	$(PRE_PHP) $(PHPUNIT_COVERAGE) --coverage-clover=var/coverage/clover.xml $(ARGS)
 
 coverage-html: ## Generate code coverage in HTML format
-	$(PRE_PHP) $(PHPUNIT_COVERAGE) --coverage-html=var/coverage/coverage-html $(ARGS)
+	$(PRE_PHP) $(PHPUNIT_COVERAGE) --coverage-html=var/coverage/html $(ARGS)
 
 mutations: ## Check code for mutants
 	make mutations-tests
@@ -44,7 +46,7 @@ mutations: ## Check code for mutants
 
 mutations-tests:
 	mkdir -p var/coverage
-	$(PRE_PHP) $(PHPUNIT_COVERAGE) --coverage-xml=var/coverage/coverage-xml --log-junit=var/coverage/junit.xml
+	$(PRE_PHP) $(PHPUNIT_COVERAGE) --coverage-xml=var/coverage/xml --log-junit=var/coverage/junit.xml
 
 mutations-infection:
 	$(PRE_PHP) vendor/bin/infection \
@@ -68,4 +70,4 @@ PRE_PHP=XDEBUG_MODE=off
 PHPUNIT_COMMAND="vendor/bin/paratest" -c $(PHPUNIT_CONFIG) --runner=WrapperRunner -p$(LOGICAL_CORES)
 PHPUNIT_COVERAGE=php -d pcov.enabled=1 -d pcov.directory=./src $(PHPUNIT_COMMAND)
 
-LOGICAL_CORES=$(shell nproc || sysctl -n hw.logicalcpu || echo 4)
+LOGICAL_CORES=$(shell nproc || sysctl -n hw.logicalcpu || wmic cpu get NumberOfLogicalProcessors || echo 4)
