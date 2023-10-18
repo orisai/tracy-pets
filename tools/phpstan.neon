@@ -3,7 +3,7 @@ includes:
 	- phpstan.baseline.neon
 
 parameters:
-	phpVersion: 70400
+	phpVersion: 80000
 	level: 8
 	tmpDir: ../var/tools/PHPStan
 	resultCachePath: %currentWorkingDirectory%/var/tools/PHPStan/resultCache.php
@@ -22,4 +22,4 @@ parameters:
 
 	ignoreErrors:
 		# Nope
-		- '#^Parameter \#1 \$str of function base64_encode expects string, string\|false given\.$#'
+		- '#^Parameter \#1 \$string of function base64_encode expects string, string\|false given\.$#'
