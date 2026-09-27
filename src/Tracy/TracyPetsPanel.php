@@ -12,7 +12,7 @@ use function file_get_contents;
 final class TracyPetsPanel
 {
 
-	/** @var list<string> */
+	/** @var non-empty-list<string> */
 	private array $texts = [
 		'Error? Good.',
 		'Go back to work',
@@ -30,7 +30,7 @@ final class TracyPetsPanel
 		'Why are they keeping you again?',
 	];
 
-	/** @var list<string> */
+	/** @var non-empty-list<string> */
 	private array $images = [
 		__DIR__ . '/animals/grumpy.png',
 		__DIR__ . '/animals/sadge.png',
